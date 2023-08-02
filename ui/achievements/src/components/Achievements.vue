@@ -105,9 +105,9 @@ export default {
     data () {
         return {
             //BADGES for 3 groups of achievements
-            hardware_investigator: [],
-            data_analyst: [],
-            ui_explorer: []
+            hardware_investigator: ['drive-range', 'brake-range', 'sampling-range', 'multiple-starts', 'multiple-brakes', 'calibrate-hardware', 'set-load'],
+            data_analyst: ['plot-trig', 'plot-correct', 'data-max', 'download-data', 'plot-free', 'plot-decay'],
+            ui_explorer: ['ruler-size', 'auto-command']
         }
     },
     computed:{

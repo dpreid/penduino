@@ -4,19 +4,40 @@
 const achievementStore = {
     state: () => ({
         achievements: [
-            {name:'custom-ui', verbose:'Customise the UI', completed: false, hidden: false},
-
-            {name:'step-inputs', verbose:'Run a step input in each mode', completed: false, hidden: false, fractional: [
-                {name:'voltage-step', completed: false},
-                {name:'position-step', completed: false},
-                {name:'speed-step', completed: false},
+            
+            {name:'drive-range', verbose:'Set drive across a range of values', completed: false, hidden: false, fractional: [
+                {name:'max-value', completed: false},
+                {name:'middle-value', completed: false},
+                {name:'small-value', completed: false},
 
             ], required: 3, n: 0}, 
 
-            {name:'multiple-runs', verbose:'Run a step or ramp 10 times', completed: false, hidden: false, required: 10, n: 0}, 
-            
+            {name:'brake-range', verbose:'Set brake across a range of values', completed: false, hidden: false, fractional: [
+                {name:'max-value', completed: false},
+                {name:'middle-value', completed: false},
+                {name:'small-value', completed: false},
 
-            
+            ], required: 3, n: 0},
+
+            {name:'sampling-range', verbose:'Set samping rate across a range of values', completed: false, hidden: false, fractional: [
+                {name:'max-value', completed: false},
+                {name:'middle-value', completed: false},
+                {name:'small-value', completed: false},
+
+            ], required: 3, n: 0},
+
+            {name:'ruler-size', verbose:'Update the ruler size', completed: false, hidden: false},
+            {name:'plot-trig', verbose:'Plot a trigonometric function', completed: false, hidden: false},
+            {name:'plot-correct', verbose:'Plotted a trig function with appropriate frequency', completed: false, hidden: false},
+            {name:'data-max', verbose:'Recorded the max number of data points', completed: false, hidden: false},
+            {name:'multiple-starts', verbose:'Start the pendulum 10 times', completed: false, hidden: false, required: 10, n: 0}, 
+            {name:'multiple-brakes', verbose:'Brake the pendulum 10 times', completed: false, hidden: false, required: 10, n: 0}, 
+            {name:'download-data', verbose:'Download a dataset with N > 100 points', completed: false, hidden: false},
+            {name:'calibrate-hardware', verbose:'Calibrated the encoder', completed: false, hidden: false},
+            {name:'plot-free', verbose:'Plotted a free decay', completed: false, hidden: false},
+            {name:'set-load', verbose:'Used the load mode', completed: false, hidden: false},
+            {name:'auto-command', verbose:'Set an autocommand to run', completed: false, hidden: false},
+            {name:'plot-decay', verbose:'Plot an free decay close to that expected', completed: false, hidden: false},
 
         ],
         new_achievement_update: false,
