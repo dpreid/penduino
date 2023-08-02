@@ -70,9 +70,6 @@ export default {
     Consent
 
   },
-  mounted(){
-    
-  },
   data() {
     return {
       isTableOn: false,
@@ -92,6 +89,12 @@ export default {
     this.$store.dispatch('setUsesLocalStorage', this.hasStorage());
     //check if user has a UUID generated already and whether they have consented to take part in the study
     
+  },
+  mounted(){
+    window.addEventListener('pagehide', () => {this.saveDataToLocalStorage()});				//closing window
+    window.addEventListener('beforeunload', () => {this.saveDataToLocalStorage()});			//refreshing page, changing URL
+
+    this.loadAchievements();
   },
   computed:{
     ...mapGetters([
@@ -262,7 +265,39 @@ export default {
       },
       closeConsentModal(){
         this.showConsentModal = false;
-      }
+      },
+      loadAchievements(){
+        let course = this.getCourse;
+        let exp = this.getExperiment;
+        const item = `achievements-${exp}-${course}`
+        if(this.getUsesLocalStorage && window.localStorage.getItem(item)){
+          let data = window.localStorage.getItem(item);
+          data = JSON.parse(data);
+          this.$store.dispatch('loadAchievements', data);
+        }
+      },
+      saveDataToLocalStorage(){
+        let course = this.getCourse;
+        let exp = this.getExperiment;
+        const item = `uuid-${exp}-${course}`
+         if(this.getUsesLocalStorage && window.localStorage.getItem(item)){
+            
+            this.saveAchievements();
+
+            return true;
+            
+         } else{
+            console.log('no localStorage allowed or uuid has been cleared');
+            return false;
+         }
+      },
+      saveAchievements(){
+        let course = this.getCourse;
+        let exp = this.getExperiment;
+        const item = `achievements-${exp}-${course}`
+        let data_json = JSON.stringify(this.$store.getters.getAchievements);
+        window.localStorage.setItem(item, data_json);
+      },
   },
 }
 </script>

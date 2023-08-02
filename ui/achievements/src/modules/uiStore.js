@@ -3,7 +3,8 @@
 
 const uiStore = {
     state: () => ({
-       isDataRecorderOn: false,    //is the Data Recorder element active
+      isAchievementsAvailable: true, 
+      isDataRecorderOn: false,    //is the Data Recorder element active
        isDraggable: true,
        usesLocalStorage: false,        //can only use localStorage if the browser allows it.
         colour_index: 0,
@@ -54,7 +55,9 @@ const uiStore = {
          getUsesLocalStorage(state){
             return state.usesLocalStorage;
          },
-         
+         getIsAchievementsAvailable(state){
+            return state.isAchievementsAvailable;
+         },
          
        },  
   

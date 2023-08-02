@@ -84,6 +84,9 @@
                     </template>
                 </toolbar>
 
+                <achievements id='achievements' v-if='getIsAchievementsAvailable' />
+                  
+
                 <li class="nav-item dropdown">
                     <clock class='nav-link' />
                 </li>
@@ -101,6 +104,7 @@
 
 import Toolbar from './elements/Toolbar.vue';
 import Clock from "./Clock.vue";
+import Achievements from './Achievements.vue';
 import { mapGetters } from 'vuex';
 
 export default {
@@ -115,9 +119,11 @@ export default {
   components: {
     Clock,
     Toolbar,
+    Achievements
   },
   computed:{
       ...mapGetters([
+      'getIsAchievementsAvailable',
         'getIsLoggingOn',
         'getLogUUID'
       ])

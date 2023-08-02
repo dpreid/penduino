@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="31.999998"
+   height="31.999998"
+   viewBox="0 0 8.466666 8.4666661"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <g
+     id="layer1">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linejoin:bevel;stroke-dasharray:none"
+       id="rect918"
+       width="3.6994884"
+       height="3.227107"
+       x="0.13386972"
+       y="1.6284807" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linejoin:bevel;stroke-dasharray:none"
+       id="rect918-3"
+       width="3.6485848"
+       height="3.1186752"
+       x="0.15402186"
+       y="5.1438169" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linejoin:bevel;stroke-dasharray:none"
+       id="rect918-3-6-7"
+       width="4.2269311"
+       height="6.6554751"
+       x="4.1102085"
+       y="1.6100128" />
+    <rect
+       style="fill:#46627f;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linejoin:bevel;stroke-dasharray:none"
+       id="rect918-3-6-7-5"
+       width="1.1697558"
+       height="8.2890224"
+       x="0.079340823"
+       y="-8.3768539"
+       transform="rotate(90)" />
+    <circle
+       style="fill:#cc1e1e;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:bevel;stroke-dasharray:none"
+       id="path1188"
+       cx="0.67719716"
+       cy="0.63412869"
+       r="0.3747066" />
+    <circle
+       style="fill:#cc1e1e;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:bevel;stroke-dasharray:none"
+       id="path1188-3"
+       cx="1.7065223"
+       cy="0.64250034"
+       r="0.3747066" />
+    <circle
+       style="fill:#cc1e1e;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:bevel;stroke-dasharray:none"
+       id="path1188-5"
+       cx="2.7415705"
+       cy="0.66599238"
+       r="0.3747066" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#cc661e;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1.0518851,0.63717608 0.2799493,0.002277"
+       id="path1303" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#cc661e;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 2.0811289,0.65100262 2.366964,0.6574901"
+       id="path1305" />
+  </g>
+</svg>
