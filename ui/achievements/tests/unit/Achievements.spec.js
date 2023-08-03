@@ -42,10 +42,10 @@ describe('Achievements.vue tests', () => {
 
         expect(wrapper.find('#achievement-notification').exists()).toBe(false);
 
-        await store.dispatch('setAchievementCompleted', 'data-max');
+        await store.dispatch('setAchievementCompleted', 'download-data');
 
         expect(wrapper.find('#achievement-notification').exists()).toBe(true);
-        expect(store.getters.getAchievementsCompleted).toContainEqual('data-max');
+        expect(store.getters.getAchievementsCompleted).toContainEqual('download-data');
         
     })
 
@@ -57,9 +57,9 @@ describe('Achievements.vue tests', () => {
             }
         });
 
-        await store.dispatch('setAchievementCompleted', 'data-max');
+        await store.dispatch('setAchievementCompleted', 'download-data');
 
-        const checkbox = wrapper.find('#data-max');
+        const checkbox = wrapper.find('#download-data');
         expect(checkbox.element.checked).toBe(true);
     })
 
@@ -106,7 +106,9 @@ describe('Achievements.vue tests', () => {
         await store.dispatch('setAchievementCompleted', 'multiple-starts');
         await store.dispatch('setAchievementCompleted', 'multiple-brakes');
         await store.dispatch('setAchievementCompleted', 'calibrate-hardware');
-        await store.dispatch('setAchievementCompleted', 'set-load');
+        await store.dispatch('setAchievementCompleted', 'brake-modes');
+        await store.dispatch('setAchievementCompleted', 'use-hotkeys');
+
         
         expect(wrapper.vm.hardwareInvestigatorComplete).toBe(true)
 
@@ -137,9 +139,7 @@ describe('Achievements.vue tests', () => {
         
         await store.dispatch('setAchievementCompleted', 'plot-trig');
         await store.dispatch('setAchievementCompleted', 'plot-correct');
-        await store.dispatch('setAchievementCompleted', 'data-max');
         await store.dispatch('setAchievementCompleted', 'download-data');
-        await store.dispatch('setAchievementCompleted', 'plot-free');
         await store.dispatch('setAchievementCompleted', 'plot-decay');
 
         expect(wrapper.vm.dataAnalystComplete).toBe(true)

@@ -128,6 +128,8 @@ export default {
                     
                 });
             }
+
+            this.$store.dispatch('setAchievementCompleted', 'auto-command');
              
      },
      stopCommands(){

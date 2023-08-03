@@ -22,20 +22,25 @@ const achievementStore = {
             {name:'sampling-range', verbose:'Set samping rate across a range of values', completed: false, hidden: false, fractional: [
                 {name:'max-value', completed: false},
                 {name:'middle-value', completed: false},
-                {name:'small-value', completed: false},
+                {name:'min-value', completed: false},
 
             ], required: 3, n: 0},
 
-            {name:'ruler-size', verbose:'Update the ruler size', completed: false, hidden: false},
+            {name:'brake-modes', verbose:'Use all braking modes', completed: false, hidden: false, fractional: [
+                {name:'set-brake', completed: false},
+                {name:'set-load', completed: false},
+                {name:'set-free', completed: false},
+
+            ], required: 3, n: 0}, 
+
+            {name:'ruler-size', verbose:'Increase the ruler size', completed: false, hidden: false},
             {name:'plot-trig', verbose:'Plot a trigonometric function', completed: false, hidden: false},
             {name:'plot-correct', verbose:'Plotted a trig function with appropriate frequency', completed: false, hidden: false},
-            {name:'data-max', verbose:'Recorded the max number of data points', completed: false, hidden: false},
+            {name:'use-hotkeys', verbose:'Use a hotkey to start the pendulum', completed: false, hidden: false},
             {name:'multiple-starts', verbose:'Start the pendulum 10 times', completed: false, hidden: false, required: 10, n: 0}, 
             {name:'multiple-brakes', verbose:'Brake the pendulum 10 times', completed: false, hidden: false, required: 10, n: 0}, 
             {name:'download-data', verbose:'Download a dataset with N > 100 points', completed: false, hidden: false},
             {name:'calibrate-hardware', verbose:'Calibrated the encoder', completed: false, hidden: false},
-            {name:'plot-free', verbose:'Plotted a free decay', completed: false, hidden: false},
-            {name:'set-load', verbose:'Used the load mode', completed: false, hidden: false},
             {name:'auto-command', verbose:'Set an autocommand to run', completed: false, hidden: false},
             {name:'plot-decay', verbose:'Plot an free decay close to that expected', completed: false, hidden: false},
 

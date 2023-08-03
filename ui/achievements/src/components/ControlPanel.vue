@@ -187,18 +187,23 @@ export default {
 		]),
 		start(){
 			this.$store.dispatch('start', this.startParam);
+            this.checkStartAchievements()
 		},
 		brake(){
 			this.$store.dispatch('brake');
+            this.checkBrakeAchievements()
 		},
 		free(){
 			this.$store.dispatch('free');
+            this.$store.dispatch('setFractionalAchievementCompleted', {name:'brake-modes', fractional:'set-free'});
 		},
 		load(){
 			this.$store.dispatch('load');
+            this.$store.dispatch('setFractionalAchievementCompleted', {name:'brake-modes', fractional:'set-load'});
 		},
 		calibrate(){
 			this.$store.dispatch('calibrate');
+            this.$store.dispatch('setAchievementCompleted', 'calibrate-hardware');
 		},
 		hotkey(event){
 			if(event.key == "f"){
@@ -209,11 +214,51 @@ export default {
 				this.load();
 			} else if(event.key == 's'){
 				this.start();
+                this.$store.dispatch('setAchievementCompleted', 'use-hotkeys');
 			}
+
+            
 		},
 		test(){
 			console.log('SECOND');
 		},
+        checkStartAchievements(){
+            this.$store.dispatch('addMultipleAchievement','multiple-starts');
+            this.checkDriveParameterAchievements();
+            this.checkSamplingParameterAchievements();
+        },
+        checkBrakeAchievements(){
+            this.$store.dispatch('addMultipleAchievement','multiple-brakes');
+            this.$store.dispatch('setFractionalAchievementCompleted', {name:'brake-modes', fractional:'set-brake'});
+            this.checkBrakeParameterAchievements();
+        },
+        checkDriveParameterAchievements(){
+            if(this.driveParam <= 10){
+                this.$store.dispatch('setFractionalAchievementCompleted', {name:'drive-range', fractional:'small-value'});
+            } else if(this.driveParam <= 80){
+                this.$store.dispatch('setFractionalAchievementCompleted', {name:'drive-range', fractional:'middle-value'});
+            } else if(this.driveParam == 100){
+                this.$store.dispatch('setFractionalAchievementCompleted', {name:'drive-range', fractional:'max-value'});
+            } 
+        },
+        checkBrakeParameterAchievements(){
+            if(this.brakeParam <= 10){
+                this.$store.dispatch('setFractionalAchievementCompleted', {name:'brake-range', fractional:'small-value'});
+            } else if(this.brakeParam <= 80){
+                this.$store.dispatch('setFractionalAchievementCompleted', {name:'brake-range', fractional:'middle-value'});
+            } else if(this.brakeParam == 100){
+                this.$store.dispatch('setFractionalAchievementCompleted', {name:'brake-range', fractional:'max-value'});
+            } 
+        },
+        checkSamplingParameterAchievements(){
+            if(this.intervalParam == 20){
+                this.$store.dispatch('setFractionalAchievementCompleted', {name:'sampling-range', fractional:'min-value'});
+            } else if(this.intervalParam < 200){
+                this.$store.dispatch('setFractionalAchievementCompleted', {name:'sampling-range', fractional:'middle-value'});
+            } else if(this.intervalParam == 200){
+                this.$store.dispatch('setFractionalAchievementCompleted', {name:'sampling-range', fractional:'max-value'});
+            } 
+        },
 		connect(){
 
 			let _this = this;

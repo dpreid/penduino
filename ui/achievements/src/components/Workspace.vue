@@ -282,6 +282,8 @@ export default {
                 this.ruler_height = this.ruler_ratio*this.ruler_width;
                 this.draw();
             }
+
+            this.$store.dispatch('setAchievementCompleted', 'ruler-size');
             
         },
         decreaseRulerSize(){

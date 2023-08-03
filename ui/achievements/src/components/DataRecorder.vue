@@ -111,6 +111,11 @@ export default {
           this.hasPlotted = false;
       },
       outputToCSV(){
+        if(this.getNumData > 100){
+          this.$store.dispatch('setAchievementCompleted', 'download-data');
+          
+        }
+
           let csv = 'Time/s,Angle/rad,AngVel/rad/s\n';
           let data = this.$store.getters.getData;
           data.forEach(function(d){

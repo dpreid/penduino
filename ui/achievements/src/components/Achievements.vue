@@ -105,8 +105,8 @@ export default {
     data () {
         return {
             //BADGES for 3 groups of achievements
-            hardware_investigator: ['drive-range', 'brake-range', 'sampling-range', 'multiple-starts', 'multiple-brakes', 'calibrate-hardware', 'set-load'],
-            data_analyst: ['plot-trig', 'plot-correct', 'data-max', 'download-data', 'plot-free', 'plot-decay'],
+            hardware_investigator: ['drive-range', 'brake-range', 'sampling-range', 'multiple-starts', 'multiple-brakes', 'calibrate-hardware', 'brake-modes', 'use-hotkeys'],
+            data_analyst: ['plot-trig', 'plot-correct', 'download-data', 'plot-decay'],
             ui_explorer: ['ruler-size', 'auto-command']
         }
     },
