@@ -105,6 +105,10 @@ const loggingStore = {
                 await helpers.delay(100);
                 context.commit('LOG_ANALYTICS', payload);
             },
+            async logAchievements(context, achievements){
+                await helpers.delay(100);
+                context.commit('LOG', {log:'achievements', data: achievements});
+            },
 
        },
        getters:{

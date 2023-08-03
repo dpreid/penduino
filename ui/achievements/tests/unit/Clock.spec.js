@@ -1,3 +1,4 @@
+import { describe, expect, test, afterEach } from 'vitest'
 import { mount } from '@vue/test-utils'
 import Clock from '../../src/components/Clock.vue';
 
